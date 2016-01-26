@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+xsetroot -cursor_name left_ptr
+xcompmgr -c &
+#$HOME/.fehbg &
+feh --bg-scale "$(find ~/Pictures/Wallpapers | shuf -n1)" &
+xrdb ~/.Xresources.bkup &
+#[[ -f ~/.Xresources ]] && xrdb ~/.Xresources 

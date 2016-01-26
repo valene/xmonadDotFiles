@@ -1,0 +1,22 @@
+configuration files for xmonad with .xmobarrc and .xprofile
+
+LOCATIONS
+==========
+1. $HOME/.xmonad/xmonad.hs
+2. $HOME/.xmobarrc
+3. $HOME/.xprofile
+4. $HOME/.Xresources.bkup
+
+NOTE:
+=====
+
+1. One Arch and Nixos xmonad --recompile search in $HOME/.ghc for modules. 
+Move .ghc out of the way if modules are installed globally. 
+Not sure if a better work around exist.
+
+2. On fresh install of Nixos, .xsessions and .xinit became inresponsive.
+After following some advice from irc and reddit, .xprofile works fine.
+
+3. Got to tinker with xmobar for volume and wlan connectivity. - todo
+
+4. Xresources declaration is basically for transparency terminal . 
