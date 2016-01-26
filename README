@@ -10,13 +10,14 @@ LOCATIONS
 NOTE:
 =====
 
-1. One Arch and Nixos xmonad --recompile search in $HOME/.ghc for modules. 
+1. One Arch and Nixos xmonad --recompile searches in $HOME/.ghc for modules. 
 Move .ghc out of the way if modules are installed globally. 
 Not sure if a better work around exist.
 
-2. On fresh install of Nixos, .xsessions and .xinit became inresponsive.
-After following some advice from irc and reddit, .xprofile works fine.
+2. On fresh install of Nixos, .xsessions and .xinit became unresponsive.
+After following some advice from irc and reddit, .xprofile seems to work fine.
 
 3. Got to tinker with xmobar for volume and wlan connectivity. - todo
 
-4. Xresources declaration is basically for transparency terminal . 
+4. Xresources declaration is basically for transparency terminal (urxvt).
+My personal font choice is inconsolata, redefine according to what is needed.  
