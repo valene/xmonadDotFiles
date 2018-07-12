@@ -12,7 +12,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Util.Run(spawnPipe)
 import System.IO
 import System.Exit
-import Xmonad.Util.EZConfig
+import XMonad.Util.EZConfig
 
 main = do
   xmproc <- spawnPipe "xmobar $HOME/.xmobarrc"
@@ -21,7 +21,9 @@ main = do
     , normalBorderColor = curNormalBorderColor
     , focusedBorderColor = curFocusBorderColor
     , modMask = mod4Mask -- win_key
+    , manageHook = manageDocks <+> manageHook defaultConfig
     , layoutHook = curLayout  --see curLayout
+    , handleEventHook = mconcat [docksEventHook, handleEventHook defaultConfig]
     , workspaces = curWorkspaces
     , terminal = curTerminal
     , logHook = dynamicLogWithPP $ xmobarPP {
@@ -50,8 +52,10 @@ curFocusBorderColor = "#4b088a"
 --Layout definition
 curLayout = avoidStruts (
   ThreeColMid 1 (3/100) (1/2) |||
+  ResizableTall 1 (3/100) (1/2) [] |||
   Tall 1 (3/100) (1/2) |||
-  Mirror (Tall 1 (3/100) (1/2)))
+  Mirror (Tall 1 (3/100) (1/2)) |||
+  Full )
 
 --Workspaces definition
 curWorkspaces = ["1:main","2:reading","3:monitoring","4:ssh","5:qemu","6","7","8","9"]
